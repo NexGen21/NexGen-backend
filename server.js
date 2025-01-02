@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(cors({
-    origin: "http://localhost:4000"
+    origin: "https://nexgendesignsbackend.vercel.app/"
 }))
 
 // Middleware
