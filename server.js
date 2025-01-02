@@ -17,7 +17,7 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 })
-app.use('/api', contactRoutes);
+app.use('/api/', contactRoutes);
 
 // Connecting to database
 mongoose.connect('mongodb+srv://sarthak:sarthak@nexgen.doemdgx.mongodb.net/?retryWrites=true&w=majority&appName=NexGen')
