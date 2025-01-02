@@ -18,6 +18,9 @@ app.use((req, res, next) => {
     next();
 })
 app.use('/api/', contactRoutes);
+app.get('/api', (req, res) => {
+    res.status(200).json({ message: 'Hello from Express!' });
+});
 
 // Connecting to database
 mongoose.connect('mongodb+srv://sarthak:sarthak@nexgen.doemdgx.mongodb.net/?retryWrites=true&w=majority&appName=NexGen')
@@ -29,3 +32,5 @@ mongoose.connect('mongodb+srv://sarthak:sarthak@nexgen.doemdgx.mongodb.net/?retr
     .catch(error => {
         console.log(error);
     })
+
+module.exports = app;
