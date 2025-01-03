@@ -34,9 +34,9 @@ app.use(express.json());
 
 app.use(cors({
     origin: "https://nexgendesigns.vercel.app/",
-    headers: {
-        'Access-Control-Allow-Origin': 'https://nexgendesigns.vercel.app'
-    }
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allow specific methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+    credentials: true, // Include cookies if needed
 }))
 
 // Middleware
