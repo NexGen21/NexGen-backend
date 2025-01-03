@@ -39,6 +39,13 @@ app.use(cors({
     credentials: true, // Include cookies if needed
 }))
 
+app.options('/api/contact', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://nexgendesigns.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.sendStatus(200);
+});
+
 // Middleware
 app.use((req, res, next) => {
     console.log(req.path, req.method);
