@@ -33,7 +33,10 @@ app.use(express.json());
 // }));
 
 app.use(cors({
-    origin: "https://nexgendesigns.vercel.app/"
+    origin: "https://nexgendesigns.vercel.app/",
+    headers: {
+        'Access-Control-Allow-Origin': 'https://nexgendesigns.vercel.app'
+    }
 }))
 
 // Middleware
