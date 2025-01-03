@@ -42,3 +42,5 @@ mongoose.connect('mongodb+srv://sarthak:sarthak@nexgen.doemdgx.mongodb.net/?retr
     .catch(error => {
         console.log(error);
     })
+
+module.exports = app;
