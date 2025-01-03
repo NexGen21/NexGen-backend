@@ -2,9 +2,8 @@ require('dotenv').config();
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express();
-const contactRoutes = require('./api/contactRoutes')
+const contactRoutes = require('./contactRoutes')
 const cors = require('cors');
-const { configDotenv } = require('dotenv');
 
 app.use(express.json());
 
@@ -28,7 +27,7 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 })
-app.use('/api/', contactRoutes);
+app.use('/api/contact', contactRoutes);
 app.get('/api', (req, res) => {
     res.status(200).json({ message: 'Hello from Express!' });
 });
