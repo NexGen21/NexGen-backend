@@ -7,18 +7,18 @@ const cors = require('cors');
 
 app.use(express.json());
 
-app.use(
-    cors({
-        origin: ['https://nexgendesigns.vercel.app'], // Add your frontend URL
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allow all HTTP methods
-        headers: {
-             "Access-Control-Allow-Origin": "*",
-             "Access-Control-Allow-Credentials": "true",
-             "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-         },
-        credentials: true,
-    })
-);
+// app.use(
+//     cors({
+//         origin: ['https://nexgendesigns.vercel.app'], // Add your frontend URL
+//         methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allow all HTTP methods
+//         headers: {
+//              "Access-Control-Allow-Origin": "*",
+//              "Access-Control-Allow-Credentials": "true",
+//              "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+//          },
+//         credentials: true,
+//     })
+// );
 
 // app.use(cors({
 //     origin: (origin, callback) => {
@@ -32,9 +32,9 @@ app.use(
 //     }
 // }));
 
-// app.use(cors({
-//     origin: "https://nexgendesignsbackend.vercel.app/"
-// }))
+app.use(cors({
+    origin: "https://nexgendesigns.vercel.app/"
+}))
 
 // Middleware
 app.use((req, res, next) => {
