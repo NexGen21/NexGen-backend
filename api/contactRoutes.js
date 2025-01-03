@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
     }
     try {
         const cont = await Contact.create({ name, email, subject, msg })
-        return res.status(200).json(cont);
+        res.status(200).json(cont);
     }
     catch(error) {
         return res.status(400).json({error: error.message})
