@@ -32,6 +32,12 @@ app.use(express.json());
 //     }
 // }));
 
+// Middleware
+app.use((req, res, next) => {
+    console.log(req.path, req.method);
+    next();
+})
+
 app.use(cors({
     origin: "https://nexgendesigns.vercel.app/",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allow specific methods
@@ -46,11 +52,6 @@ app.options('/api/contact', (req, res) => {
     res.sendStatus(200);
 });
 
-// Middleware
-app.use((req, res, next) => {
-    console.log(req.path, req.method);
-    next();
-})
 app.use('/api/contact', contactRoutes);
 app.get('/api', (req, res) => {
     res.status(200).json({ message: 'Hello from Express!' });
