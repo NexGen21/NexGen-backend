@@ -40,9 +40,9 @@ app.use((req, res, next) => {
 
 app.use(cors({
     origin: "https://nexgendesigns.vercel.app/",
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allow specific methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
-    credentials: true, // Include cookies if needed
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
 }))
 
 app.options('/api/contact', (req, res) => {
